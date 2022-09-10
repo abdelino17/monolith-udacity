@@ -3,8 +3,8 @@ function sleep(ms) {
 }
 
 async function main() {
-  while(true) {
-    console.log('Containers rule!');
+  while (true) {
+    console.log('Containers!');
     await sleep(5000);
   }
 }
