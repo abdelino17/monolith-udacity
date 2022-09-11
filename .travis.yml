@@ -17,7 +17,7 @@ before_script:
 script:
 - docker --version # print the version for logging
 - docker build -t udacity-demo .
-- docker tag udacity-demo abdelino/udacity-demo:latest
+- docker tag udacity-demo $DOCKER_USERNAME/udacity-demo:latest
 
 after_success:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
