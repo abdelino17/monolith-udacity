@@ -1,24 +1,25 @@
 language: node_js
 
 node_js:
-- 16
+- 13
 
 services:
 - docker
 
 # Prétester les installations
 install:
-- echo "nothing needs to be installed"
+- npm install
 
 # Scripts à exécuter en guise de tests
 before_script:
 - echo "no tests"
 
 script:
+- echo "Udacity - Week $UDACITY_WEEK"
 - docker --version # print the version for logging
-- docker build -t udacity-demo .
-- docker tag udacity-demo $DOCKER_USERNAME/udacity-demo:latest
+- docker build -t connect-session .
+- docker tag connect-session $DOCKER_USERNAME/connect-session:latest
 
 after_success:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker push abdelino/udacity-demo:latest
+- docker push abdelino/connect-session:latest

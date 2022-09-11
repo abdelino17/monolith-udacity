@@ -1,8 +1,10 @@
 # Use NodeJS base image
-FROM node:13
+FROM node:13-slim
 
 # Create app directory
 WORKDIR /usr/src/app
+
+LABEL author="abdel"
 
 # Install app dependencies by copying
 # package.json and package-lock.json
